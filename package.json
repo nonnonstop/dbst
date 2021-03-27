@@ -13,7 +13,7 @@
     "build:gyp": "node-gyp rebuild",
     "dist": "electron-builder",
     "start": "electron ./dist/main.js",
-    "clean": "rimraf build dist",
+    "clean": "rimraf build dist dist_electron",
     "lint": "eslint src --ext .js,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
