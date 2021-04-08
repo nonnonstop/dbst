@@ -39,6 +39,8 @@ public:
     uint8_t health = 0;
     uint8_t growth = 0;
     uint8_t xMonth = 0;
+    uint8_t tired = 0;
+    uint8_t recovery = 0;
   };
 
 private:
@@ -193,6 +195,8 @@ bool Dbst::ReadDataInternal()
     data.health = _bufferRaceStatus.at(address + 41);
     data.growth = _bufferRaceStatus.at(address + 35) >> 3;
     data.xMonth = _bufferRaceStatus.at(address + 35) & 0x7;
+    data.tired = _bufferRaceStatus.at(address + 87);
+    data.recovery = _bufferRaceStatus.at(address + 42);
   }
   return true;
 }
@@ -241,6 +245,8 @@ Napi::Value Dbst::ConvertData(const Napi::CallbackInfo &info)
       obj.Set("health", data.health);
       obj.Set("growth", data.growth);
       obj.Set("xMonth", data.xMonth);
+      obj.Set("tired", data.tired);
+      obj.Set("recovery", data.recovery);
       array.Set(i, obj);
     }
     retData.Set("race", array);

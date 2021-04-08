@@ -53,11 +53,6 @@ const columns: GridColDef[] = [
     },
   },
   {
-    field: 'cond',
-    headerName: '調子',
-    width: 70,
-  },
-  {
     field: 'speed',
     headerName: 'SP',
     width: 70,
@@ -152,6 +147,21 @@ const columns: GridColDef[] = [
           return '';
       }
     },
+  },
+  {
+    field: 'cond',
+    headerName: '調子',
+    width: 70,
+  },
+  {
+    field: 'tired',
+    headerName: '疲労',
+    width: 70,
+  },
+  {
+    field: 'recovery',
+    headerName: '回復',
+    width: 70,
   },
 ];
 

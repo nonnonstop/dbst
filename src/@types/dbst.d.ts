@@ -28,4 +28,6 @@ interface RaceHorse {
   temperMax: number;
   growth: number;
   xMonth: number;
+  tired: number;
+  recovery: number;
 }
