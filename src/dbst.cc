@@ -180,7 +180,7 @@ bool Dbst::ReadDataInternal()
     ReadHorseName(_bufferRaceStatus.at(address + 2), data.name);
     data.year = (_bufferRaceStatus.at(address + 4) >> 2) + 1;
     data.sex = _bufferRaceStatus.at(address + 4) & 0x3;
-    data.bestWeight = (static_cast<uint_fast16_t>(_bufferRaceStatus.at(address + 29)) << 1) | 0x100;
+    data.bestWeight = (static_cast<uint_fast16_t>(_bufferRaceStatus.at(address + 29)) << 1) + 256;
     data.diffWeight = static_cast<int8_t>(_bufferRaceStatus.at(address + 86));
     data.cond = _bufferRaceStatus.at(address + 46) & 0xf;
     data.speed = _bufferRaceStatus.at(address + 30);
